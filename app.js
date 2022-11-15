@@ -1,64 +1,63 @@
-const fs = require("node:fs");
+const express = require("express");
 
-//all functions in file will be run by require(), log as well
-const builder = require("./someD/someF")
+const userDb = require("./dataBases/users");
+const {urlencoded} = require("express");
 
-const student1 = builder.studentBuilder("max", 23);
-
-console.log(student1);
-
-
-// fs.readFile("./text.txt",(err, data)=>{
-//     console.log(err, "ERR");
-//
-//     console.log(data.toString());
-// })
-
-// fs.appendFile('./text.txt', 'hello there \n',(err)=>{
-//     console.log(err, "ERR");
-// })
-//
-// fs.writeFile('./text.txt', 'Write File',(err)=>{
-//     console.log(err, "err");
-// })
-
-// copying data to another file
-// fs.readFile("./text.txt",(err, data)=>{
-//     fs.appendFile('./copy.txt',data,(err)=>{
-//         console.log(err);
-//     })
-// })
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 
+app.get("/users",(req, res)=>{
+    console.log("users endpoint");
 
-// cleaning file
-// fs.truncate("./copy.txt",(err)=>{
-//     console.log(err);
-// })
-//
+    // res.json({user: "Alex"})
+    // res.end("only string can be used in res.end, no objects")
+    // res.json(" but in res.json we can use string as well")
+    // res.status(402).json("its is OK")
+    // res.sendFile("./")
+    res.json(userDb)
 
-// deletes file
-// fs.unlink("./copy.txt", (err)=>{
-//     console.log(err);
-// })
-// Use fs.rm(path, { recursive: true }) instead
-// fs.rmdir("./folder",{recursive: true}, err => {
-//     console.log(err);
-// })
 
-// do not change files by name like below!
-// fs.rename('./text.txt', './users.js', err => {
-//     console.log(err);
-// })
+});
 
-// fs.rename('./users.js',"./someD/users.json", err => {
-//     console.log(err);
-// })
+app.get("/users/:userId",(req, res)=>{
+    console.log(req.params);
+    const {userId} = req.params;
 
-// fs.copyFile("./someD/users.json","./copy.json", err => {
-//     console.log(err);
-// })
+    res.json(userDb[userId])
 
+});
+
+app.post("/users", (req, res)=>{
+
+    const userInfo = req.body
+    // console.log(userInfo);
+    userDb.push(userInfo)
+    res.status(201).json("Created");
+})
+
+app.put("/users/:userId", (req, res)=>{
+    const newUserInfo = req.body;
+    const userId = req.params.userId;
+
+    userDb[userId] = newUserInfo
+
+    res.json("Updated")
+})
+
+app.get("/", (req, res)=>{
+    console.log("welcome to get response");
+})
+
+
+
+app.listen(3000, ()=>{
+    console.log("server listen 3000");
+});
+
+
+// get all, get one, deleteuserById, creat, updateUserById    +if clauses with user and params are strings!!!  CRUD
 
 
 
