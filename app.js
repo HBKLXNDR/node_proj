@@ -1,11 +1,11 @@
 const fs = require("node:fs");
 
+
 //all functions in file will be run by require(), log as well
-const builder = require("./someD/someF")
+// const builder = require("./someD/someF")
 
-const student1 = builder.studentBuilder("max", 23);
+// const student1 = builder.studentBuilder("max", 23);
 
-console.log(student1);
 
 
 // fs.readFile("./text.txt",(err, data)=>{
