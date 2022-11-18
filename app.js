@@ -1,6 +1,6 @@
 const express = require("express");
-const fs = require("fs/promises");
-const path = require("path");
+
+const {fileServices} = require("./services")
 
 
 const app = express();
@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.get("/users", async (req, res) => {
 
-    const users = await reader();
+    const users = await fileServices.reader();
 
     res.json(users);
 })
@@ -24,7 +24,7 @@ app.post("/users", async (req, res) => {
         return res.status(400).json("wrong age")
     }
 
-    const users = await reader();
+    const users = await fileServices.reader();
 
     const newUser = {
         name: userInfo.name,
@@ -34,16 +34,15 @@ app.post("/users", async (req, res) => {
 
     users.push(newUser)
 
-    await writer(users)
+    await fileServices.writer(users)
 
     res.status(201).json(newUser)
 })
 
 app.get("/users/:userId", async (req, res) => {
-    // console.log(req.params);
     const {userId} = req.params;
 
-    const users = await reader();
+    const users = await fileServices.reader();
 
     const user = users.find((el) => el.id === +userId)
     if (!user) {
@@ -57,7 +56,7 @@ app.put("/users/:userId", async (req, res) => {
     const newUserInfo = req.body;
     const {userId} = req.params;
 
-    const users = await reader();
+    const users = await fileServices.reader();
     const index = users.findIndex((el) => el.id === +userId);
 
     if (index === -1) {
@@ -66,14 +65,14 @@ app.put("/users/:userId", async (req, res) => {
 
     users[index] = {...users[index], ...newUserInfo};
 
-    await writer(users)
+    await fileServices.writer(users)
 
     res.status(201).json(users[index]);
 })
 app.delete("/users/:userId", async (req, res) => {
     const {userId} = req.params;
 
-    const users = await reader();
+    const users = await fileServices.reader();
     const index = users.findIndex((el) => el.id === +userId);
 
     if (index === -1) {
@@ -82,7 +81,7 @@ app.delete("/users/:userId", async (req, res) => {
 
     users.splice(index, 1);
 
-    await writer(users)
+    await fileServices.writer(users)
 
     res.status(204).json("deleted, sendStatus is not available");
 })
@@ -92,13 +91,13 @@ app.listen(3000, () => {
     console.log('Server listen 3000');
 });
 
-const reader = async () => {
-    const buffer = await fs.readFile(path.join(__dirname, "dataBase", "users.json"));
-    return JSON.parse(buffer.toString())
-}
-const writer = async (users) => {
-    await fs.writeFile(path.join(__dirname, "dataBase", "users.json"), JSON.stringify(users));
-}
+// const reader = async () => {
+//     const buffer = await fs.readFile(path.join(__dirname, "dataBase", "users.json"));
+//     return JSON.parse(buffer.toString())
+// }
+// const writer = async (users) => {
+//     await fs.writeFile(path.join(__dirname, "dataBase", "users.json"), JSON.stringify(users));
+// }
 
 //all functions in file will be run by require("name of the file"), log as well
 // const builder = require("./someD/someF")
