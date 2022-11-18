@@ -1,16 +1,109 @@
+const express = require("express");
 const fs = require("fs/promises");
-const express = require("express")
-const path = require("path")
-
-const app = express()
+const path = require("path");
 
 
+const app = express();
 
-//all functions in file will be run by require(), log as well
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+app.get("/users", async (req, res) => {
+
+    const users = await reader();
+
+    res.json(users);
+})
+
+app.post("/users", async (req, res) => {
+    const userInfo = req.body
+    if (userInfo.name.length < 3 || typeof userInfo.name !== "string") {
+        return res.status(400).json("name is incorrect")
+    }
+    if (userInfo.age <= 0 || Number.isNaN(+userInfo.age)) {
+        return res.status(400).json("wrong age")
+    }
+
+    const users = await reader();
+
+    const newUser = {
+        name: userInfo.name,
+        age: userInfo.age,
+        id: users[users.length - 1].id + 1
+    }
+
+    users.push(newUser)
+
+    await writer(users)
+
+    res.status(201).json(newUser)
+})
+
+app.get("/users/:userId", async (req, res) => {
+    // console.log(req.params);
+    const {userId} = req.params;
+
+    const users = await reader();
+
+    const user = users.find((el) => el.id === +userId)
+    if (!user) {
+        return res.status(404).json(`user with id ${userId} is not found`)
+    } else {
+        res.json(user)
+    }
+})
+
+app.put("/users/:userId", async (req, res) => {
+    const newUserInfo = req.body;
+    const {userId} = req.params;
+
+    const users = await reader();
+    const index = users.findIndex((el) => el.id === +userId);
+
+    if (index === -1) {
+        return res.status(404).json(`user with id ${userId} is not found`);
+    }
+
+    users[index] = {...users[index], ...newUserInfo};
+
+    await writer(users)
+
+    res.status(201).json(users[index]);
+})
+app.delete("/users/:userId", async (req, res) => {
+    const {userId} = req.params;
+
+    const users = await reader();
+    const index = users.findIndex((el) => el.id === +userId);
+
+    if (index === -1) {
+        return res.status(404).json(`user with id ${userId} is not found`);
+    }
+
+    users.splice(index, 1);
+
+    await writer(users)
+
+    res.status(204).json("deleted, sendStatus is not available");
+})
+
+
+app.listen(3000, () => {
+    console.log('Server listen 3000');
+});
+
+const reader = async () => {
+    const buffer = await fs.readFile(path.join(__dirname, "dataBase", "users.json"));
+    return JSON.parse(buffer.toString())
+}
+const writer = async (users) => {
+    await fs.writeFile(path.join(__dirname, "dataBase", "users.json"), JSON.stringify(users));
+}
+
+//all functions in file will be run by require("name of the file"), log as well
 // const builder = require("./someD/someF")
 
 // const student1 = builder.studentBuilder("max", 23);
-
 
 
 // fs.readFile("./text.txt",(err, data)=>{
@@ -33,7 +126,6 @@ const app = express()
 //         console.log(err);
 //     })
 // })
-
 
 
 // cleaning file
