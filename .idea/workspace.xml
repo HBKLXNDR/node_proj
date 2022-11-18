@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="95bb3942-60e1-4583-84dd-521baec625cf" name="Changes" comment="hw_2 another version" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HK07ibvdspgMHkz6njFMPJOPvl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "javascript.nodejs.core.library.configured.version": "16.14.0",
+    "javascript.nodejs.core.library.typings.version": "16.18.3",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/boys" />
+      <recent name="$PROJECT_DIR$/girls" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95bb3942-60e1-4583-84dd-521baec625cf" name="Changes" comment="" />
+      <created>1668018303822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668018303822</updated>
+      <workItem from="1668018305599" duration="12450000" />
+      <workItem from="1668188956381" duration="599000" />
+      <workItem from="1668191650039" duration="3000" />
+      <workItem from="1668502776502" duration="9464000" />
+      <workItem from="1668601475202" duration="3050000" />
+      <workItem from="1668607673205" duration="40000" />
+      <workItem from="1668607773601" duration="4000" />
+      <workItem from="1668607783696" duration="144000" />
+      <workItem from="1668674461475" duration="2010000" />
+      <workItem from="1668676482430" duration="13140000" />
+    </task>
+    <task id="LOCAL-00001" summary="1st">
+      <created>1668102051346</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668102051346</updated>
+    </task>
+    <task id="LOCAL-00002" summary="hw_1">
+      <created>1668105849963</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668105849963</updated>
+    </task>
+    <task id="LOCAL-00003" summary="express base, CRUD requests">
+      <created>1668513716916</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668513716916</updated>
+    </task>
+    <task id="LOCAL-00004" summary="CRUD requests with express.js, HW2">
+      <created>1668607473206</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668607473206</updated>
+    </task>
+    <task id="LOCAL-00005" summary="master updated to clear , all tasks are in different branches which named accordingly">
+      <created>1668607841162</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668607841162</updated>
+    </task>
+    <task id="LOCAL-00006" summary="master updated to clear , all tasks are in different branches which named accordingly">
+      <created>1668607915316</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668607915316</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test">
+      <created>1668675541052</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668675541052</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test">
+      <created>1668770354180</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1668770354180</updated>
+    </task>
+    <task id="LOCAL-00009" summary="hw_2 another version">
+      <created>1668770432597</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1668770432597</updated>
+    </task>
+    <task id="LOCAL-00010" summary="hw_2 another version">
+      <created>1668772328877</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668772328877</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1st" />
+    <MESSAGE value="hw_1" />
+    <MESSAGE value="express base, CRUD requests" />
+    <MESSAGE value="CRUD requests with express.js, HW2" />
+    <MESSAGE value="master updated to clear , all tasks are in different branches which named accordingly" />
+    <MESSAGE value="test" />
+    <MESSAGE value="hw_2 another version" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw_2 another version" />
+  </component>
+</project>
